@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".WiFiDirectActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="@string/large_text" />
+
+    <Button
+        android:id="@+id/open_db_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open DB Manager" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/frag_list"
+            class="in.nighthawk.wificonqrer.DeviceListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/phone_list_height">
+            <!-- Preview: layout=@layout/row_devices -->
+        </fragment>
+
+        <fragment
+            android:id="@+id/frag_detail"
+            class="in.nighthawk.wificonqrer.DeviceDetailFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- Preview: layout=@layout/device_detail -->
+        </fragment>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
